@@ -12,8 +12,10 @@ import model.bin.Professor;
 
 public class EntradaDeDados {
     DAO dao = new DAO();
+    Aluno aluno = new Aluno();
+    Professor professor = new Professor();
     
-    public void entradaAluno(Aluno aluno) throws SQLException{
+    public void entradaAluno() throws SQLException{
         aluno.setNome(JOptionPane.showInputDialog("Nome: "));
         aluno.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Entre com a idade: ")));
 	aluno.setCpf(JOptionPane.showInputDialog("Entre com o cpf: "));
@@ -22,7 +24,7 @@ public class EntradaDeDados {
 	dao.salvarAluno(aluno);
     }
     
-    public void entradaProfessor(Professor professor) throws SQLException{
+    public void entradaProfessor() throws SQLException{
         professor.setNome(JOptionPane.showInputDialog("Nome: "));
         professor.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Entre com a idade: ")));
 	professor.setCpf(JOptionPane.showInputDialog("Entre com o cpf: "));
@@ -31,38 +33,38 @@ public class EntradaDeDados {
         dao.salvarProfessor(professor);
     }
     
-    public void exibirAluno(Aluno aluno) throws SQLException{
+    public void exibirAluno() throws SQLException{
         //aluno = new Aluno();
         aluno.setRa(Integer.parseInt(JOptionPane.showInputDialog("Entre com o ra do aluno a ser exibido: ")));
     	JOptionPane.showMessageDialog(null, dao.exibirAluno(aluno));
     }
     
-    public void exibirProfessor(Professor professor) throws SQLException{
+    public void exibirProfessor() throws SQLException{
         professor.setSiape(Integer.parseInt(JOptionPane.showInputDialog("Entre com o siape do professor a ser exibido: ")));
     	JOptionPane.showMessageDialog(null, dao.exibirProfessor(professor));
     }
     
-    public void exibirTodosAlunos(Aluno aluno) throws SQLException{
-        JOptionPane.showMessageDialog(null, dao.exibirTodosAlunos());
+    public void exibirTodosAlunos() throws SQLException{
+        JOptionPane.showMessageDialog(null, dao.exibirTodosAluno());
     }
     
-    public void exibirTodosProfessores(Professor professor) throws SQLException{
+    public void exibirTodosProfessores() throws SQLException{
         JOptionPane.showMessageDialog(null, dao.exibirTodosProfessores());
     }
     
-    public void removerAluno(Aluno aluno) throws SQLException{
+    public void removerAluno() throws SQLException{
     	aluno.setRa(Integer.parseInt(JOptionPane.showInputDialog("Entre com o ra do aluno que desejar deletar: ")));
         dao.removerAluno(aluno);
         JOptionPane.showMessageDialog(null, "Aluno do ra " + aluno.getRa() + " foi deletado com sucesso.");
     }
     
-    public void removerProfessor(Professor professor) throws SQLException{
+    public void removerProfessor() throws SQLException{
     	professor.setSiape(Integer.parseInt(JOptionPane.showInputDialog("Entre com o ra do aluno que desejar deletar: ")));
         dao.removerProfessor(professor);
         JOptionPane.showMessageDialog(null, "O professor do siape " + professor.getSiape() + " foi deletado com sucesso.");
     }
     
-    public void atualizarAluno(Aluno aluno) throws SQLException{
+    public void atualizarAluno() throws SQLException{
 	aluno.setRa(Integer.parseInt(JOptionPane.showInputDialog("Entre com o ra do aluno a ser atualizado: ")));
 	aluno.setNome(JOptionPane.showInputDialog("Entre com o nome: "));
 	aluno.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Entre com a idade: ")));
@@ -70,7 +72,7 @@ public class EntradaDeDados {
 	aluno.setSexo(JOptionPane.showInputDialog("Entre com o sexo: "));
         dao.atualizarAluno(aluno);
        }
-    public void atualizarProfessor(Professor professor) throws SQLException{
+    public void atualizarProfessor() throws SQLException{
 	professor.setSiape(Integer.parseInt(JOptionPane.showInputDialog("Entre com o siape do professor: ")));
 	professor.setNome(JOptionPane.showInputDialog("Entre com o nome: "));
 	professor.setIdade(Integer.parseInt(JOptionPane.showInputDialog("Entre com a idade: ")));
@@ -78,4 +80,5 @@ public class EntradaDeDados {
 	professor.setSexo(JOptionPane.showInputDialog("Entre com o sexo: "));
         dao.atualizarProfessor(professor);
        }
+
 }

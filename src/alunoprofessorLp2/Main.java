@@ -25,10 +25,10 @@ public class Main {
                     String opt2 = JOptionPane.showInputDialog("1 - Aluno\n2 - Professor");
                     if(opt2.equals("1")){
                         Aluno aluno = null;
-                        entrada.entradaAluno(aluno);
+                        entrada.entradaAluno();
                     }else{
                         Professor professor = null;
-                        entrada.entradaProfessor(professor);
+                        entrada.entradaProfessor();
                     }
                 }
                 break;
@@ -39,17 +39,17 @@ public class Main {
                     String opt3 = JOptionPane.showInputDialog("1 - Buscar por Id\n2 - Buscar todos");
                     if(opt3.equals("2")){
                         Aluno aluno = null;
-                        entrada.exibirTodosAlunos(aluno);
+                        entrada.exibirTodosAlunos();
                     }else if(opt3.equals("1")){
                         Aluno aluno = null;
-                        entrada.exibirAluno(aluno);
+                        entrada.exibirAluno();
                     }if(opt2.equals("2")){
                         if(opt3.equals("1")){
                             Professor professor = null;
-                            entrada.exibirProfessor(professor);
+                            entrada.exibirProfessor();
                         }else{
                             Professor professor = null;
-                            entrada.exibirTodosProfessores(professor);
+                            entrada.exibirTodosProfessores();
                         }
                     }else{
                         JOptionPane.showInputDialog(null, "Opcao invalida!");
@@ -62,10 +62,10 @@ public class Main {
                     String opt3 = JOptionPane.showInputDialog("1 - Aluno\n2 - Professor");
                     if(opt3.equals("1")){
                         Aluno aluno = null;
-                        entrada.removerAluno(aluno);
+                        entrada.removerAluno();
                     }else{
                         Professor professor = null;
-                        entrada.removerProfessor(professor);
+                        entrada.removerProfessor();
                     }
                 }
                 break;
@@ -75,10 +75,10 @@ public class Main {
                     String opt3 = JOptionPane.showInputDialog("1 - Aluno\n2 - Professor");
                     if(opt3.equals("1")){
                         Aluno aluno = null;
-                        entrada.atualizarAluno(aluno);
+                        entrada.atualizarAluno();
                     }else{
                         Professor professor = null;
-                        entrada.atualizarProfessor(professor);
+                        entrada.atualizarProfessor();
                     }
                 }
                 break;
